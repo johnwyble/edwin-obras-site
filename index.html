@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edwin Obras — State Representative, 33rd District</title>
+<meta name="description" content="Edwin Obras represents Washington's 33rd Legislative District. 25 years in human services. Six bills signed into law. A neighbor who shows up.">
+<meta property="og:title" content="Edwin Obras — State Representative, 33rd District">
+<meta property="og:description" content="25 years in human services. Six bills signed into law. A neighbor who shows up.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0068A8;
+  --navy-deep: #004A7A;
+  --teal: #107078;
+  --teal-dark: #0A4E54;
+  --sky: #70D0E0;
+  --sky-light: #B8E8F0;
+  --crimson: #881010;
+  --white: #FFFFFF;
+  --offwhite: #F3F6F9;
+  --cream: #FAFBFC;
+  --charcoal: #1A1A2E;
+  --midgray: #5A6577;
+  --lightgray: #D1D5DB;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================
+   UTILITY
+   ============================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+/* ============================
+   ANIMATIONS
+   ============================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================
+   NAV
+   ============================ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s;
+}
+
+nav.scrolled {
+  box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.nav-logo img {
+  height: 48px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--charcoal);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background: var(--offwhite);
+  color: var(--navy);
+}
+
+.nav-donate {
+  background: var(--navy) !important;
+  color: var(--white) !important;
+  font-weight: 600 !important;
+  padding: 10px 24px !important;
+  border-radius: 10px !important;
+}
+
+.nav-donate:hover {
+  background: var(--navy-deep) !important;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--charcoal);
+  margin: 6px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* ============================
+   HERO
+   ============================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(165deg, var(--navy) 0%, var(--teal-dark) 50%, var(--teal) 100%);
+  padding-top: 72px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(112,208,224,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(0,104,168,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  padding: 60px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  color: var(--white);
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 24px;
+  animation: fadeIn 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(42px, 5.5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.3s;
+}
+
+.hero h1 span {
+  color: var(--sky);
+}
+
+.hero-sub {
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  max-width: 480px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.45s;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.6s;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.08);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.5s;
+}
+
+.hero-image img {
+  max-height: 75vh;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 60px rgba(0,0,0,0.3));
+}
+
+.hero-swoosh {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 3;
+}
+
+.hero-swoosh img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+/* ============================
+   STATS BAR
+   ============================ */
+.stats-bar {
+  background: var(--charcoal);
+  padding: 40px 0;
+  position: relative;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.stat-item {
+  color: var(--white);
+}
+
+.stat-number {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 42px;
+  color: var(--sky);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+
+/* ============================
+   MEET EDWIN
+   ============================ */
+.meet {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.meet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.meet-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  position: relative;
+}
+
+.meet-photos img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.meet-photos img:nth-child(1) {
+  height: 280px;
+  grid-column: 1 / 3;
+}
+
+.meet-photos img:nth-child(2) {
+  height: 220px;
+}
+
+.meet-photos img:nth-child(3) {
+  height: 220px;
+}
+
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+
+.meet-content h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: clamp(32px, 3.5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: var(--navy);
+  margin-bottom: 32px;
+}
+
+.meet-content p {
+  font-size: 17px;
+  color: var(--midgray);
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+
+.meet-content p strong {
+  color: var(--charcoal);
+  font-weight: 600;
+}
+
+.swoosh-divider {
+  height: 20px;
+  margin: 24px 0;
+  opacity: 0.6;
+}
+
+/* ============================
+   ISSUES / PRIORITIES
+   ============================ */
+.issues {
+  padding: 120px 0;
+  background: var(--offwhite);
+  position: relative;
+}
+
+.issues-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.issues-header h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: clamp(32px, 3.5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.issues-header p {
+  font-size: 18px;
+  color: var(--midgray);
+}
+
+.issues-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.issue-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 44px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.issue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,104,168,0.08);
+}
+
+.issue-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.issue-card:nth-child(1)::before { background: var(--navy); }
+.issue-card:nth-child(2)::before { background: var(--teal); }
+.issue-card:nth-child(3)::before { background: var(--sky); }
+.issue-card:nth-child(4)::before { background: var(--crimson); }
+
+.issue-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.issue-card:nth-child(1) .issue-icon { background: rgba(0,104,168,0.08); }
+.issue-card:nth-child(2) .issue-icon { background: rgba(16,112,120,0.08); }
+.issue-card:nth-child(3) .issue-icon { background: rgba(112,208,224,0.15); }
+.issue-card:nth-child(4) .issue-icon { background: rgba(136,16,16,0.06); }
+
+.issue-card h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+
+.issue-card p {
+  font-size: 16px;
+  color: var(--midgray);
+  line-height: 1.7;
+}
+
+/* ============================
+   RECORD / BILLS
+   ============================ */
+.record {
+  padding: 120px 0;
+  background: var(--navy);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.record::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(112,208,224,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.record-header {
+  max-width: 640px;
+  margin-bottom: 64px;
+}
+
+.record-header .section-label {
+  color: var(--sky);
+}
+
+.record-header h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: clamp(32px, 3.5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  margin-bottom: 20px;
+}
+
+.record-header p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.65);
+}
+
+.bills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.bill-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.bill-card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.bill-number {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--sky);
+  margin-bottom: 8px;
+}
+
+.bill-title {
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.bill-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+.bill-status {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: rgba(112,208,224,0.15);
+  color: var(--sky);
+}
+
+.record-note {
+  text-align: center;
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ============================
+   ENDORSEMENTS
+   ============================ */
+.endorsements {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.endorsements-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+
+.endorsements-header h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: clamp(32px, 3.5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.endorsement-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.endorsement-chip {
+  background: var(--offwhite);
+  padding: 14px 28px;
+  border-radius: 60px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--charcoal);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.endorsement-chip:hover {
+  background: rgba(0,104,168,0.06);
+  transform: translateY(-2px);
+}
+
+/* ============================
+   CTA / DONATE
+   ============================ */
+.cta {
+  padding: 120px 0;
+  background: linear-gradient(165deg, var(--teal-dark) 0%, var(--teal) 50%, var(--navy) 100%);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 30% 70%, rgba(112,208,224,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 70% 30%, rgba(0,104,168,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.cta p {
+  font-size: 19px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.btn-donate {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--teal-dark);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 40px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-donate:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.cta-signature img {
+  height: 60px;
+  opacity: 0.7;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.5);
+  padding: 48px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-logo img {
+  height: 40px;
+  opacity: 0.7;
+}
+
+.footer-text {
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--sky);
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+    padding: 40px 0;
+  }
+
+  .hero-sub { margin: 0 auto 40px; }
+  .hero-ctas { justify-content: center; }
+  .hero-image { justify-content: center; }
+  .hero-image img { max-height: 50vh; }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .meet-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .issues-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 24px 32px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--sky);
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-text { text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .meet, .issues, .record, .endorsements { padding: 80px 0; }
+  .cta { padding: 80px 0; }
+  .stat-number { font-size: 32px; }
+  .issue-card { padding: 32px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="Edwin Obras for State Representative">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#meet">Meet Edwin</a></li>
+      <li><a href="#issues">Issues</a></li>
+      <li><a href="#record">Record</a></li>
+      <li><a href="#endorsements">Endorsements</a></li>
+      <li><a href="https://secure.anedot.com/friends-of-edwin-obras/e7f71097-2b4d-4edb-b31e-81d22b7b4bb1" class="nav-donate" target="_blank" rel="noopener">Donate</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">State Representative &bull; 33rd District</div>
+        <h1>A neighbor<br>who <span>shows up.</span></h1>
+        <p class="hero-sub">25 years in human services. Six bills signed into law. Edwin Obras does the work in Olympia the same way he did it on Beacon Hill: he listens first, then gets to it.</p>
+        <div class="hero-ctas">
+          <a href="#meet" class="btn-primary">Meet Edwin &darr;</a>
+          <a href="https://secure.anedot.com/friends-of-edwin-obras/e7f71097-2b4d-4edb-b31e-81d22b7b4bb1" class="btn-secondary" target="_blank" rel="noopener">Contribute</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/edwin-headshot-transparent.png" alt="Edwin Obras">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number">$30M+</div>
+        <div class="stat-label">Secured for the 33rd District</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Bills signed into law</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Years in human services</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-number">16</div>
+        <div class="stat-label">Bills sponsored this biennium</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEET EDWIN -->
+<section class="meet" id="meet">
+  <div class="container">
+    <div class="meet-grid">
+      <div class="meet-photos reveal">
+        <img src="images/community-2.jpg" alt="Edwin talking with community members at a park picnic table">
+        <img src="images/community-1.jpg" alt="Edwin sitting and chatting with a neighbor at a basketball court">
+        <img src="images/community-3.jpg" alt="Edwin walking and talking with a neighbor on a tree-lined path">
+      </div>
+      <div class="meet-content">
+        <div class="section-label reveal">Meet Edwin</div>
+        <h2 class="reveal reveal-delay-1">From Beacon Hill to the 33rd. Still the same guy.</h2>
+        <p class="reveal reveal-delay-2">Edwin Obras came to the U.S. from the Philippines as a kid and grew up on Beacon Hill in Seattle. First person in his family to graduate from college. He earned his degree in American Ethnic Studies at UW, then a Master of Public Administration at Northeastern.</p>
+        <p class="reveal reveal-delay-3">He spent <strong>16 years at the City of Seattle's Human Services Department</strong>, working his way from contracts manager to Deputy Division Director. Homelessness, housing, anti-hunger programs, youth development, services for survivors of domestic violence. That was the job for more than two decades.</p>
+        <img src="images/swoosh-blue.png" alt="" class="swoosh-divider reveal reveal-delay-3">
+        <p class="reveal reveal-delay-4">He's served as <strong>Board President of the Filipino Community of Seattle</strong> since 2019 and co-chaired their affordable housing capital campaign. He chaired the <strong>SeaTac Human Services Advisory Committee</strong>. And in December 2024, the King County Council appointed him to the state House.</p>
+        <p class="reveal reveal-delay-4">He's a dad to Mohamed and Sophia. He's the Assistant Majority Whip. He won the inaugural <strong>People First of Washington Legislator of the Year</strong> award in 2025. And he's still the guy who shows up at the park and actually listens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ISSUES -->
+<section class="issues" id="issues">
+  <div class="container">
+    <div class="issues-header">
+      <div class="section-label reveal">What He's Fighting For</div>
+      <h2 class="reveal reveal-delay-1">The issues aren't abstract.<br>They're your rent. Your safety. Your kid's school.</h2>
+      <p class="reveal reveal-delay-2">Edwin's legislative priorities come from 25 years of hearing what people actually need.</p>
+    </div>
+    <div class="issues-grid">
+      <div class="issue-card reveal">
+        <div class="issue-icon">&#127968;</div>
+        <h3>Housing & Affordability</h3>
+        <p>Your rent went up $400. Your paycheck didn't. Edwin has pushed for rent increase caps, legislation to limit excessive home buying that prices out first-time buyers, and co-chaired an affordable housing capital campaign. The $30 million he secured for the district includes real housing development funding.</p>
+      </div>
+      <div class="issue-card reveal reveal-delay-1">
+        <div class="issue-icon">&#128736;</div>
+        <h3>Worker Protections</h3>
+        <p>Three of Edwin's signed-into-law bills protect workers: isolated employee safety, transportation network company regulation, and expanding background check requirements. He's also fighting to stop credit card companies from skimming workers' tips and to strengthen asbestos safety training.</p>
+      </div>
+      <div class="issue-card reveal reveal-delay-2">
+        <div class="issue-icon">&#128737;</div>
+        <h3>Public Safety</h3>
+        <p>Edwin's background check bill and peace officer false identification bill are both law now. He's working on jail system reform, community safety liability standards, and gift card fraud prevention. His approach comes from years working with survivors and communities dealing with violence.</p>
+      </div>
+      <div class="issue-card reveal reveal-delay-3">
+        <div class="issue-icon">&#129657;</div>
+        <h3>Health Care & Behavioral Health</h3>
+        <p>His district funding includes major behavioral health investment. His nursing title protection bill is law. He's working on nursing assistant regulation and plasma donation oversight. Edwin wants to use his professional background to expand statewide access to mental health resources.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGISLATIVE RECORD -->
+<section class="record" id="record">
+  <div class="container">
+    <div class="record-header">
+      <div class="section-label reveal">Legislative Record</div>
+      <h2 class="reveal reveal-delay-1">Six bills signed into law.<br>In his first full biennium.</h2>
+      <p class="reveal reveal-delay-2">Edwin didn't go to Olympia to give speeches. He went to pass bills. Here's what he got done in the 2025&ndash;26 session.</p>
+    </div>
+    <div class="bills-grid">
+      <div class="bill-card reveal">
+        <div class="bill-number">ESHB 1332</div>
+        <div class="bill-title">Transportation Network Companies</div>
+        <div class="bill-desc">New regulations for ride-share companies to protect drivers and riders.</div>
+        <div class="bill-status">Signed into law</div>
+      </div>
+      <div class="bill-card reveal reveal-delay-1">
+        <div class="bill-number">SHB 1490</div>
+        <div class="bill-title">Background Checks</div>
+        <div class="bill-desc">Strengthened background check requirements to keep communities safer.</div>
+        <div class="bill-status">Signed into law</div>
+      </div>
+      <div class="bill-card reveal reveal-delay-2">
+        <div class="bill-number">2SHB 1524</div>
+        <div class="bill-title">Isolated Employee Protections</div>
+        <div class="bill-desc">Created safety protections for workers in isolated work environments.</div>
+        <div class="bill-status">Signed into law</div>
+      </div>
+      <div class="bill-card reveal reveal-delay-1">
+        <div class="bill-number">HB 2155</div>
+        <div class="bill-title">Nursing Title Protections</div>
+        <div class="bill-desc">Regulated use of nursing titles to protect consumers from misrepresentation.</div>
+        <div class="bill-status">Signed into law</div>
+      </div>
+      <div class="bill-card reveal reveal-delay-2">
+        <div class="bill-number">EHB 2156</div>
+        <div class="bill-title">AGO Investigator Authority</div>
+        <div class="bill-desc">Expanded authority for Attorney General's Office investigators.</div>
+        <div class="bill-status">Signed into law</div>
+      </div>
+      <div class="bill-card reveal reveal-delay-3">
+        <div class="bill-number">ESHB 2165</div>
+        <div class="bill-title">Peace Officer False ID</div>
+        <div class="bill-desc">Made it a crime to falsely identify yourself as a peace officer.</div>
+        <div class="bill-status">Signed into law</div>
+      </div>
+    </div>
+    <p class="record-note reveal">Edwin also sponsored 10 additional bills currently in committee and co-sponsored 241 bills across both sessions.</p>
+  </div>
+</section>
+
+<!-- ENDORSEMENTS -->
+<section class="endorsements" id="endorsements">
+  <div class="container">
+    <div class="endorsements-header">
+      <div class="section-label reveal">Endorsements</div>
+      <h2 class="reveal reveal-delay-1">People who know the work endorse the worker.</h2>
+    </div>
+    <div class="endorsement-list reveal reveal-delay-2">
+      <div class="endorsement-chip">U.S. Rep. Pramila Jayapal</div>
+      <div class="endorsement-chip">State Superintendent Chris Reykdal</div>
+      <div class="endorsement-chip">People First of Washington</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / DONATE -->
+<section class="cta" id="donate">
+  <div class="container">
+    <div class="cta-content">
+      <div class="section-label reveal" style="color: var(--sky);">Support Edwin</div>
+      <h2 class="reveal reveal-delay-1">Keep a neighbor<br>at the table.</h2>
+      <p class="reveal reveal-delay-2">Your donation keeps Edwin's team working in Olympia and in the district. Every dollar goes toward the kind of representation the 33rd deserves: someone who does the work.</p>
+      <div class="cta-buttons reveal reveal-delay-3">
+        <a href="https://secure.anedot.com/friends-of-edwin-obras/e7f71097-2b4d-4edb-b31e-81d22b7b4bb1" class="btn-donate" target="_blank" rel="noopener">Donate Now &rarr;</a>
+      </div>
+      <div class="cta-signature reveal reveal-delay-4">
+        <img src="images/signature-white.png" alt="Edwin Obras signature">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/logo-white.png" alt="Edwin Obras">
+      </div>
+      <ul class="footer-links">
+        <li><a href="#meet">Meet Edwin</a></li>
+        <li><a href="#issues">Issues</a></li>
+        <li><a href="#record">Record</a></li>
+        <li><a href="https://secure.anedot.com/friends-of-edwin-obras/e7f71097-2b4d-4edb-b31e-81d22b7b4bb1" target="_blank" rel="noopener">Donate</a></li>
+      </ul>
+      <div class="footer-text">
+        Paid for by Friends of Edwin Obras<br>
+        PO Box 58061, SeaTac, WA 98158
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+reveals.forEach(el => observer.observe(el));
+
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Mobile menu
+const toggle = document.getElementById('mobileToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  links.classList.toggle('open');
+});
+
+// Close mobile menu on link click
+links.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => links.classList.remove('open'));
+});
+
+// Smooth anchor offset
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
