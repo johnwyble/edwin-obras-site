@@ -195,7 +195,7 @@ nav.scrolled {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(165deg, var(--navy) 0%, var(--teal-dark) 50%, var(--teal) 100%);
+  background: var(--navy);
   padding-top: 72px;
 }
 
@@ -206,9 +206,26 @@ nav.scrolled {
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(112,208,224,0.15) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(0,104,168,0.2) 0%, transparent 70%);
+  background-image: url('images/edwin-headshot.jpg');
+  background-size: cover;
+  background-position: 70% center;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,74,122,0.92) 0%,
+    rgba(0,74,122,0.85) 35%,
+    rgba(10,78,84,0.6) 65%,
+    rgba(10,78,84,0.3) 100%
+  );
   pointer-events: none;
 }
 
@@ -312,36 +329,7 @@ nav.scrolled {
 }
 
 .hero-image {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  position: relative;
-  animation: slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.5s;
-}
-
-.hero-image img {
-  max-height: 75vh;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 60px rgba(0,0,0,0.3));
-}
-
-.hero-swoosh {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  z-index: 3;
-}
-
-.hero-swoosh img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.4;
+  /* Right column left empty — photo is the full-bleed background */
 }
 
 /* ============================
@@ -846,10 +834,21 @@ footer {
     padding: 40px 0;
   }
 
+  .hero::before {
+    background-position: center center;
+  }
+
+  .hero::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,74,122,0.88) 0%,
+      rgba(0,74,122,0.75) 50%,
+      rgba(10,78,84,0.6) 100%
+    );
+  }
+
   .hero-sub { margin: 0 auto 40px; }
   .hero-ctas { justify-content: center; }
-  .hero-image { justify-content: center; }
-  .hero-image img { max-height: 50vh; }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -936,8 +935,8 @@ footer {
           <a href="https://secure.anedot.com/friends-of-edwin-obras/e7f71097-2b4d-4edb-b31e-81d22b7b4bb1" class="btn-secondary" target="_blank" rel="noopener">Contribute</a>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="images/edwin-headshot-transparent.png" alt="Edwin Obras">
+      <div class="hero-image" aria-hidden="true">
+        <!-- Full-bleed photo is the background -->
       </div>
     </div>
   </div>
