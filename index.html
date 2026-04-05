@@ -220,7 +220,7 @@ nav.scrolled {
   right: 0;
   bottom: 0;
   background: linear-gradient(
-    to right,
+    to left,
     rgba(0,74,122,0.92) 0%,
     rgba(0,74,122,0.85) 35%,
     rgba(10,78,84,0.6) 65%,
@@ -238,6 +238,11 @@ nav.scrolled {
   padding: 60px 0;
   position: relative;
   z-index: 2;
+  direction: rtl;
+}
+
+.hero-grid > * {
+  direction: ltr;
 }
 
 .hero-content {
