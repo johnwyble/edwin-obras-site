@@ -156,16 +156,26 @@ nav.scrolled {
   color: var(--navy);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .nav-donate {
-  background: var(--navy) !important;
-  color: var(--white) !important;
-  font-weight: 600 !important;
-  padding: 10px 24px !important;
-  border-radius: 10px !important;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
 }
 
 .nav-donate:hover {
-  background: var(--navy-deep) !important;
+  background: var(--navy-deep);
 }
 
 .mobile-toggle {
@@ -833,15 +843,60 @@ footer {
    RESPONSIVE
    ============================ */
 @media (max-width: 900px) {
+  html { scroll-padding-top: 76px; }
+
+  /* NAV — shrink and keep Donate visible */
+  .nav-inner {
+    height: 72px;
+    padding: 0 20px;
+  }
+
+  .nav-logo img {
+    height: 56px;
+  }
+
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 12px 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--sky);
+    gap: 4px;
+  }
+
+  .nav-links.open li { width: 100%; }
+  .nav-links.open a {
+    display: block;
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+
+  /* HERO */
+  .hero {
+    padding-top: 72px;
+    min-height: auto;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
+    direction: ltr;
     text-align: center;
-    gap: 40px;
-    padding: 40px 0;
+    gap: 32px;
+    padding: 56px 0 72px;
+    min-height: auto;
   }
 
   .hero::before {
-    background-position: center center;
+    background-position: center 20%;
   }
 
   .hero::after {
@@ -853,57 +908,125 @@ footer {
     );
   }
 
-  .hero-sub { margin: 0 auto 40px; }
+  .hero h1 {
+    font-size: clamp(34px, 8vw, 54px);
+    letter-spacing: -1px;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    margin: 0 auto 32px;
+    max-width: 100%;
+  }
+
   .hero-ctas { justify-content: center; }
+
+  /* STATS */
+  .stats-bar { padding: 32px 0; }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 
+  /* MEET */
+  .meet { padding: 80px 0; }
+
   .meet-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
 
-  .issues-grid {
-    grid-template-columns: 1fr;
-  }
+  .meet-photos img:nth-child(1) { height: 220px; }
+  .meet-photos img:nth-child(2),
+  .meet-photos img:nth-child(3) { height: 160px; }
 
-  .bills-grid {
-    grid-template-columns: 1fr;
-  }
+  /* ISSUES */
+  .issues { padding: 80px 0; }
+  .issues-grid { grid-template-columns: 1fr; }
+  .issues-header h2 br { display: none; }
 
-  .nav-links { display: none; }
-  .mobile-toggle { display: block; }
+  /* RECORD */
+  .record { padding: 80px 0; }
+  .bills-grid { grid-template-columns: 1fr; }
+  .record-header h2 br { display: none; }
 
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 128px;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    padding: 24px 32px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    border-bottom: 2px solid var(--sky);
-  }
+  /* CTA */
+  .cta { padding: 80px 0; }
+  .cta h2 br { display: none; }
 
+  /* FOOTER */
   .footer-inner {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
 
+  .footer-logo img { height: 72px; }
   .footer-text { text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
 }
 
 @media (max-width: 600px) {
-  .container { padding: 0 20px; }
-  .meet, .issues, .record, .endorsements { padding: 80px 0; }
-  .cta { padding: 80px 0; }
+  .container { padding: 0 16px; }
+
+  .nav-donate {
+    font-size: 14px;
+    padding: 9px 18px;
+  }
+
+  .stats-bar { padding: 28px 0; }
   .stat-number { font-size: 32px; }
-  .issue-card { padding: 32px 28px; }
+  .stat-label { font-size: 13px; }
+
+  .meet, .issues, .record, .endorsements, .cta { padding: 64px 0; }
+
+  .meet-photos img:nth-child(1) { height: 180px; }
+  .meet-photos img:nth-child(2),
+  .meet-photos img:nth-child(3) { height: 130px; }
+
+  .issue-card { padding: 28px 24px; }
+  .issue-card h3 { font-size: 22px; }
+  .bill-card { padding: 24px 22px; }
+
+  .hero-ctas {
+    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    justify-content: center;
+    padding: 14px 24px;
+    width: 100%;
+  }
+
+  .btn-donate { padding: 16px 28px; font-size: 16px; }
+
+  .endorsement-chip { padding: 12px 22px; font-size: 15px; }
+}
+
+@media (max-width: 380px) {
+  .nav-inner { padding: 0 14px; }
+  .nav-logo img { height: 48px; }
+  .nav-actions { gap: 8px; }
+  .nav-donate { font-size: 13px; padding: 8px 14px; }
+
+  .stats-grid { grid-template-columns: 1fr; gap: 18px; }
+  .stat-number { font-size: 30px; }
+
+  .hero h1 { font-size: 30px; line-height: 1.1; }
+  .hero-sub { font-size: 16px; }
+
+  .issue-card { padding: 24px 20px; }
+  .issue-card h3 { font-size: 20px; }
 }
 </style>
 </head>
@@ -919,11 +1042,13 @@ footer {
       <li><a href="#meet">Meet Edwin</a></li>
       <li><a href="#issues">Issues</a></li>
       <li><a href="#record">Record</a></li>
-      <li><a href="https://secure.anedot.com/friends-of-edwin-obras/e7f71097-2b4d-4edb-b31e-81d22b7b4bb1" class="nav-donate" target="_blank" rel="noopener">Donate</a></li>
     </ul>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-actions">
+      <a href="https://secure.anedot.com/friends-of-edwin-obras/e7f71097-2b4d-4edb-b31e-81d22b7b4bb1" class="nav-donate" target="_blank" rel="noopener">Donate</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
