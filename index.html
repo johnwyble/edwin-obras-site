@@ -348,6 +348,10 @@ nav.scrolled {
   /* Right column left empty — photo is the full-bleed background */
 }
 
+.hero-mobile-photo {
+  display: none;
+}
+
 /* ============================
    STATS BAR
    ============================ */
@@ -880,32 +884,41 @@ footer {
     font-size: 16px;
   }
 
-  /* HERO */
+  /* HERO — face featured at top */
   .hero {
     padding-top: 72px;
     min-height: auto;
+    background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 55%, var(--teal-dark) 100%);
   }
+
+  .hero::before { display: none; }
+  .hero::after { display: none; }
 
   .hero-grid {
     grid-template-columns: 1fr;
     direction: ltr;
     text-align: center;
     gap: 32px;
-    padding: 56px 0 72px;
+    padding: 28px 0 64px;
     min-height: auto;
   }
 
-  .hero::before {
-    background-position: center 20%;
+  .hero-image {
+    order: -1;
+    margin: 0;
   }
 
-  .hero::after {
-    background: linear-gradient(
-      to bottom,
-      rgba(0,74,122,0.88) 0%,
-      rgba(0,74,122,0.75) 50%,
-      rgba(10,78,84,0.6) 100%
-    );
+  .hero-mobile-photo {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 4 / 5;
+    height: auto;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
   }
 
   .hero h1 {
@@ -990,6 +1003,8 @@ footer {
   .meet-photos img:nth-child(2),
   .meet-photos img:nth-child(3) { height: 130px; }
 
+  .hero-mobile-photo { max-width: 320px; border-radius: 20px; }
+
   .issue-card { padding: 28px 24px; }
   .issue-card h3 { font-size: 22px; }
   .bill-card { padding: 24px 22px; }
@@ -1066,7 +1081,8 @@ footer {
         </div>
       </div>
       <div class="hero-image" aria-hidden="true">
-        <!-- Full-bleed photo is the background -->
+        <!-- Full-bleed photo is the background on desktop; mobile uses the img below -->
+        <img src="images/edwin-face-mobile.jpg" alt="" class="hero-mobile-photo">
       </div>
     </div>
   </div>
